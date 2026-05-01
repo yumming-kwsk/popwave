@@ -108,13 +108,13 @@ body, html {
 /* スマホ */
 @media (max-width: 768px) {
   .content {
-    inset: 150px 90px; /* 余白も縮めると気持ちいい */
+    inset: 140px 90px; /* 余白も縮めると気持ちいい */
     grid-template-columns: repeat(2, 1fr);
   }
 
   .content > div {
-    font-size: 1.5em;
-   border-radius: 50%;
+    font-size: 1.8em;
+   /* border-radius: 50%; */
   }
 }
 
