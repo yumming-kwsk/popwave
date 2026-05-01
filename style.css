@@ -1,0 +1,157 @@
+
+body, html {
+ margin: 0;
+ padding: 0;
+}
+
+.frame {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: #eee; */
+  /* background:plum;  */
+  background: rgb(208, 255, 67); 
+  overflow: hidden;
+}
+
+/* 共通 */
+.border {
+  position: absolute;
+  background-repeat: repeat;
+}
+
+/* 上下（横スクロール） */
+.top, .bottom {
+  width: 100%;
+  height: 88px;
+  animation: scrollX 18s linear infinite;
+}
+
+.top {
+  top: -15px;
+  background-image: url("wave_line/wave_top.svg"); /* 横に繋がる画像 */
+}
+
+.bottom {
+  bottom: -15px;
+  background-image: url("wave_line/wave_bottom.svg"); /* 横に繋がる画像 */
+  animation-direction: reverse;
+}
+
+/* 左右（縦スクロール） */
+.left, .right {
+  width: 88px;
+  height: 100%;
+  animation: scrollY 18s linear infinite;
+}
+
+.left {
+  left: -15px;
+   background-image: url("wave_line/wave_left.svg"); /* 縦に繋がる画像 */
+}
+
+.right {
+  right: -15px;
+   background-image: url("wave_line/wave_right.svg"); /* 縦に繋がる画像 */
+  animation-direction: reverse;
+}
+
+/* アニメーション */
+@keyframes scrollX {
+  from { background-position-x: 0; }
+  to   { background-position-x: 1140px; }
+}
+
+@keyframes scrollY {
+  from { background-position-y: 0; }
+  to   { background-position-y: 1440px; }
+}
+
+
+
+/* 中身 */
+.content {
+  position: absolute;
+  inset: 120px;
+  display: grid;
+  gap: 0;
+  /* background-color: aliceblue; */
+  /* PC（デフォルト） */
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+.content > div {
+   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #fff; */
+  text-align: center;
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.8rem;
+  border-width: 8px;
+  border-style: solid;
+  border-radius: 8rem;
+  text-align: center;
+}
+
+.content > div:nth-child(odd) {
+  z-index: 2;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  .content {
+    inset: 100px; /* 余白も縮めると気持ちいい */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content > div {
+    font-size: 2rem;
+  }
+}
+
+
+
+.menu{
+  transform: rotate(-18deg) translateY(-8px) translateX(5px); 
+  border-color: #ff466b;
+  background-color: #FFFB02;
+  color:#ff466b;
+}
+.about{
+  transform: rotate(5deg) translateY(5px) translateX(5px);
+  border-color: #007b29;
+  color:#007b29;
+  background-color: #ffa928;
+}
+.news    {
+  transform: rotate(10deg) translateY(-10px) translateX(-10px);
+  border-color: #0012d4;
+  color: #0012d4;
+   background-color:#FF88DB;
+  }
+.hello   {
+  transform: rotate(-5deg) translateY(10px) translateX(-8px);
+  border-color: #ff5500;
+  color: #ff5500;
+   background-color: #68F7CC;
+ }
+.world   {
+  transform: rotate(12deg) translateY(-5px);
+  border-color: #6300a4;
+  color: #6300a4;
+   background-color: #6CAEFF;
+ }
+.heart   { 
+  transform: rotate(-5deg) translateY(10px) translateX(5px);
+  border-color: #ff466b;
+  color: #ff466b;
+   background-color:  #FFFB02;
+ }
