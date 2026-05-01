@@ -113,7 +113,7 @@ body, html {
   }
 
   .content > div {
-    font-size: 1.8rem;
+    font-size: 1.8em;
    /* border-radius: 50%; */
   }
 }
